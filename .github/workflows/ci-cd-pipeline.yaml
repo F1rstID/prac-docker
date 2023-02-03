@@ -5,7 +5,7 @@ on:
       - main
 jobs:
   # Test Code 검증
-  Run-Testcode:
+  run-test-code:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -17,7 +17,7 @@ jobs:
       - run: npm run test
   #Image Build하여 DockerHub에 Push
   continuos-integration:
-    needs: [Run-Testcode]
+    needs: [run-test-code]
     runs-on: ubuntu-latest
     steps:
       - name: Set up QEMU
@@ -56,7 +56,7 @@ jobs:
           key: ${{ secrets.PRIVATE_KEY }}
           port: 22
           source: 'docker-compose.yaml'
-          target: '/home/ec2-uesr/'
+          target: '/home/ec2-user/'
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@master
         with:
