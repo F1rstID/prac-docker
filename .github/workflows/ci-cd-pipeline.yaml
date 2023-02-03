@@ -16,7 +16,7 @@ jobs:
       - run: npm ci
       - run: npm run test
   #Image Build하여 DockerHub에 Push
-  Docker-Push:
+  continuos-integration:
     needs: [Run-Testcode]
     runs-on: ubuntu-latest
     steps:
@@ -42,8 +42,8 @@ jobs:
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
   #CD
-  cd-pipeline:
-    needs: [Docker-Push]
+  continuos-deploy:
+    needs: [continuos-integration]
     name: continuos deploy
     runs-on: ubuntu-latest
     steps:
