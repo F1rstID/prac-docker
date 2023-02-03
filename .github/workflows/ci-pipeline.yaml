@@ -37,7 +37,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/prac-docker:latest
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
