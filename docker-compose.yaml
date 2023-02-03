@@ -3,12 +3,12 @@ version: '3.9'
 services:
   # project build setting
   api:
-    image: f1rstdoc/prac-dockerl:v1
+    image: f1rstdoc/prac-docker:latest
     # build:
     #   dockerfile: ./Dockerfile
     #   context: .
     ports:
-      - 3000:3000
+      - 80:3000
     volumes:
       - ./:/app/
     # sciprt run
