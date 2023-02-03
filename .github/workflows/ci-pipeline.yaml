@@ -1,4 +1,4 @@
-name: learn-github-action
+name: ci-pipeline
 on:
   push:
     branches:
@@ -14,4 +14,3 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - run: npm run test
-      - run: npm run start:debug
