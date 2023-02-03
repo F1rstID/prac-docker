@@ -16,7 +16,7 @@ describe('AppController', () => {
 
   describe('root', () => {
     it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('수정됨2');
+      expect(appController.getHello()).toBe('CI/CD 테스트 제발');
     });
   });
 });
