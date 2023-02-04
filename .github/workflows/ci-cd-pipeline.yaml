@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - main
-      - devlop
+      - develop
 jobs:
   # Test Code 검증
   run-test-code:
