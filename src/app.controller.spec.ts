@@ -18,7 +18,7 @@ describe('AppController', () => {
 
   describe('root', () => {
     it('return String', () => {
-      expect(appController.getHello()).toBe('hi');
+      expect(appController.getHello()).toBe(process.env.TEST);
     });
   });
 });
