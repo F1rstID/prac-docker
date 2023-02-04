@@ -4,13 +4,8 @@ services:
   # project build setting
   api:
     image: f1rstdoc/prac-docker:latest
-    # build:
-    #   dockerfile: ./Dockerfile
-    #   context: .
     ports:
       - 80:3000
-    volumes:
-      - ./:/app/
     # sciprt run
     command: ['sh', '-c', 'npm run start:prod']
   # mongoDB setting
@@ -21,5 +16,4 @@ services:
     volumes:
       - mongo:/data/db/
 
-volumes:
-  mongo:
+# volumes:
